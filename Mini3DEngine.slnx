@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Mini3DEngine.vcxproj" Id="2c6b5b2b-7e0e-4a32-81e7-a33fe8aa2984" />
+</Solution>
