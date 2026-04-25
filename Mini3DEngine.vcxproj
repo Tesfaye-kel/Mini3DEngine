@@ -128,6 +128,43 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\animation.cpp" />
+    <ClCompile Include="src\birds.cpp" />
+    <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\car.cpp" />
+    <ClCompile Include="src\greenarea.cpp" />
+    <ClCompile Include="src\house.cpp" />
+    <ClCompile Include="src\lighting.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\plane.cpp" />
+    <ClCompile Include="src\renderer.cpp" />
+    <ClCompile Include="src\scene2d.cpp" />
+    <ClCompile Include="src\terrain.cpp" />
+    <ClCompile Include="src\trees.cpp" />
+    <ClCompile Include="src\water.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\animation.h" />
+    <ClInclude Include="src\birds.h" />
+    <ClInclude Include="src\camera.h" />
+    <ClInclude Include="src\car.h" />
+    <ClInclude Include="src\greenarea.h" />
+    <ClInclude Include="src\house.h" />
+    <ClInclude Include="src\lighting.h" />
+    <ClInclude Include="src\plane.h" />
+    <ClInclude Include="src\renderer.h" />
+    <ClInclude Include="src\scene2d.h" />
+    <ClInclude Include="src\terrain.h" />
+    <ClInclude Include="src\trees.h" />
+    <ClInclude Include="src\water.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="assets\README.txt" />
+    <Text Include="models\README.txt" />
+    <Text Include="textures\README.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
