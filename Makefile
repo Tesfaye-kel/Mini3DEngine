@@ -1,7 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -O2
 LDFLAGS = -lglut -lGLU -lGL
-
 SRCS = $(wildcard src/*.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
