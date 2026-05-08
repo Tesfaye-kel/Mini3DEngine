@@ -8,6 +8,5 @@ all: ForestLuxuryWorld
 
 ForestLuxuryWorld: $(SRCS)
 	$(CXX) $(CXXFLAGS) $(SRCS) -o $@ $(LDFLAGS)
-
 clean:
 	rm -f src/*.o ForestLuxuryWorld
