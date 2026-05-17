@@ -1,1 +1,1 @@
- Place texture images (diffuse, normal, roughness, metallic maps) here
+ Place texture images (diffuse,  normal, roughness, metallic maps) here
