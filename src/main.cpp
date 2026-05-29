@@ -1,9 +1,12 @@
-#include "renderer.h"
+#include "core/Engine.h"
 #include <cstdlib>
+#include <GL/glut.h>
 
 int main(int argc, char** argv) {
-    Renderer renderer;
-    renderer.init(argc, argv);
+    Mini3D::Engine& engine = Mini3D::Engine::Instance();
+    if (!engine.Init(argc, argv)) return EXIT_FAILURE;
+    // Enter GLUT main loop (callbacks were registered by Renderer)
     glutMainLoop();
-    return 0;
+    engine.Shutdown();
+    return EXIT_SUCCESS;
 }

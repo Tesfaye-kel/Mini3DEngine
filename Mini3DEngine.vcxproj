@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -127,17 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\animation.cpp" />
     <ClCompile Include="src\birds.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\car.cpp" />
+    <ClCompile Include="src\core\Engine.cpp" />
     <ClCompile Include="src\greenarea.cpp" />
     <ClCompile Include="src\house.cpp" />
     <ClCompile Include="src\lighting.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\plane.cpp" />
     <ClCompile Include="src\renderer.cpp" />
+    <ClCompile Include="src\renderer_modern\Mesh.cpp" />
+    <ClCompile Include="src\renderer_modern\ModernRenderer.cpp" />
+    <ClCompile Include="src\renderer_modern\Shader.cpp" />
+    <ClCompile Include="src\renderer_modern\Texture.cpp" />
     <ClCompile Include="src\scene2d.cpp" />
     <ClCompile Include="src\terrain.cpp" />
     <ClCompile Include="src\trees.cpp" />
@@ -148,21 +152,31 @@
     <ClInclude Include="src\birds.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\car.h" />
+    <ClInclude Include="src\core\Engine.h" />
     <ClInclude Include="src\greenarea.h" />
     <ClInclude Include="src\house.h" />
     <ClInclude Include="src\lighting.h" />
     <ClInclude Include="src\plane.h" />
     <ClInclude Include="src\renderer.h" />
+    <ClInclude Include="src\renderer_modern\Mesh.h" />
+    <ClInclude Include="src\renderer_modern\ModernRenderer.h" />
+    <ClInclude Include="src\renderer_modern\Shader.h" />
+    <ClInclude Include="src\renderer_modern\Texture.h" />
     <ClInclude Include="src\scene2d.h" />
     <ClInclude Include="src\terrain.h" />
     <ClInclude Include="src\trees.h" />
     <ClInclude Include="src\water.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\copilot-instructions.md" />
     <None Include="Makefile" />
+    <None Include="Mini3DEngine\.gitignore" />
+    <None Include="shaders\pbr.frag" />
+    <None Include="shaders\pbr.vert" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="assets\README.txt" />
+    <Text Include="CMakeLists.txt" />
     <Text Include="models\README.txt" />
     <Text Include="textures\README.txt" />
   </ItemGroup>

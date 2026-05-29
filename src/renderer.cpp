@@ -20,12 +20,12 @@ static Renderer* g_instance = nullptr;
 
 Renderer::Renderer()
     : m_width(800), m_height(600), m_time(0.0f),
-      m_camera(nullptr), m_terrain(nullptr), m_house(nullptr), m_trees(nullptr), m_birds(nullptr), m_plane(nullptr), m_water(nullptr), m_lights(nullptr), m_anim(nullptr)
+      m_camera(nullptr), m_terrain(nullptr), m_house(nullptr), m_trees(nullptr), m_birds(nullptr), m_birds2(nullptr), m_plane(nullptr), m_water(nullptr), m_lights(nullptr), m_anim(nullptr), m_cars(nullptr), m_greenArea(nullptr)
 {
 }
 
 Renderer::~Renderer() {
-    // cleanup
+    // cleanup: owned objects are not yet using RAII in this demo
 }
 
 void Renderer::init(int argc, char** argv) {
@@ -59,6 +59,7 @@ void Renderer::initGL() {
 }
 
 void Renderer::initScene() {
+    // Note: In production this should use RAII types and resource managers.
     m_camera = new Camera();
     m_camera->setViewport(m_width, m_height);
 
@@ -79,7 +80,7 @@ void Renderer::initScene() {
 void Renderer::resize(int w, int h) {
     m_width = w; m_height = h;
     glViewport(0,0,w,h);
-    m_camera->setViewport(w,h);
+    if (m_camera) m_camera->setViewport(w,h);
 }
 
 void Renderer::update(float dt) {
@@ -142,3 +143,5 @@ void Renderer::onKeyDown(unsigned char key, int x, int y) {
 }
 void Renderer::onKeyUp(unsigned char key, int x, int y) { if (m_camera) m_camera->onKeyUp(key); }
 void Renderer::onMouseMove(int x, int y) { if (m_camera) m_camera->onMouseMove(x,y); }
+
+

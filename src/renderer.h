@@ -16,17 +16,29 @@ class Scene2D;
 class CarSystem;
 class GreenArea;
 
+/**
+ * Lightweight renderer used by the example engine. This is a compatibility
+ * layer that currently uses GLUT and immediate-mode for the demo scene. It
+ * is organized to be replaced by a modern Renderer later.
+ */
 class Renderer {
 public:
     Renderer();
     ~Renderer();
 
+    /** Initialize GL/windowing and the scene. */
     void init(int argc, char** argv);
+
+    /** Window resize callback. */
     void resize(int w, int h);
+
+    /** Update per-frame state. */
     void update(float dt);
+
+    /** Render the current frame. */
     void render();
 
-    // input
+    // input callbacks
     void onKeyDown(unsigned char key, int x, int y);
     void onKeyUp(unsigned char key, int x, int y);
     void onMouseMove(int x, int y);
@@ -37,23 +49,20 @@ private:
     void initGL();
     void initScene();
 
-    int m_width;
-    int m_height;
-    float m_time; // seconds
+    int m_width = 800;
+    int m_height = 600;
+    float m_time = 0.0f; // seconds
 
-    Camera* m_camera;
-    Terrain* m_terrain;
-    House* m_house;
-    Trees* m_trees;
-    Birds* m_birds;
-    Birds* m_birds2; // second flock with different color
-    PlaneSystem* m_plane;
-    WaterSystem* m_water;
-    LightSystem* m_lights;
-    AnimationSystem* m_anim;
-    CarSystem* m_cars;
-    GreenArea* m_greenArea;
-
-    // 2D overlay
-    // forward declare functions for the simple 2D overlay
+    Camera* m_camera = nullptr;
+    Terrain* m_terrain = nullptr;
+    House* m_house = nullptr;
+    Trees* m_trees = nullptr;
+    Birds* m_birds = nullptr;
+    Birds* m_birds2 = nullptr; // second flock with different color
+    PlaneSystem* m_plane = nullptr;
+    WaterSystem* m_water = nullptr;
+    LightSystem* m_lights = nullptr;
+    AnimationSystem* m_anim = nullptr;
+    CarSystem* m_cars = nullptr;
+    GreenArea* m_greenArea = nullptr;
 };
